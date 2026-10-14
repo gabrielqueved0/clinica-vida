@@ -82,6 +82,7 @@ def menu():
         print("3. Buscar paciente")
         print("4. Listar todos os pacientes")
         print("5. Sair")
+        print("=" *30)
 
         opc = input("Escolha uma opção: ")
 
