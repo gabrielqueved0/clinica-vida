@@ -49,6 +49,13 @@ def ver_estatisticas():
         print("Mais velho:", mais_velho["nome"], "-", mais_velho["idade"], "anos\n")
 
 
+def mostrar_paciente(paciente):
+    print("Nome:", paciente["nome"])
+    print("Idade:", paciente["idade"])
+    print("Telefone:", paciente["telefone"])
+    print()
+
+
 def buscar_paciente():
     print("\n--- Buscar Paciente ---")
     nome_busca = input("Digite o nome do paciente: ")
@@ -57,10 +64,7 @@ def buscar_paciente():
     for paciente in pacientes:
         if paciente["nome"].lower() == nome_busca.lower():
             print("Paciente encontrado:")
-            print("Nome:", paciente["nome"])
-            print("Idade:", paciente["idade"])
-            print("Telefone:", paciente["telefone"])
-            print()
+            mostrar_paciente(paciente)
             encontrado = True
 
     if not encontrado:
@@ -73,10 +77,7 @@ def listar_pacientes():
         print("Nenhum paciente cadastrado.\n")
     else:
         for paciente in pacientes:
-            print("Nome:", paciente["nome"])
-            print("Idade:", paciente["idade"])
-            print("Telefone:", paciente["telefone"])
-            print()
+            mostrar_paciente(paciente)
 
 
 def menu():
