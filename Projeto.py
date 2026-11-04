@@ -17,18 +17,23 @@ def cadastrar_paciente():
     print("Paciente cadastrado com sucesso!\n")
 
 
+def calcular_media_idades():
+    soma = 0
+    for paciente in pacientes:
+        soma += paciente["idade"]
+    return soma / len(pacientes)
+
+
 def ver_estatisticas():
     print("\n--- Estatísticas ---")
     if len(pacientes) == 0:
         print("Nenhum paciente cadastrado.\n")
     else:
         total = len(pacientes)
-        soma_idades = 0
         mais_novo = pacientes[0]
         mais_velho = pacientes[0]
 
         for paciente in pacientes:
-            soma_idades += paciente["idade"]
 
             if paciente["idade"] < mais_novo["idade"]:
                 mais_novo = paciente
@@ -36,7 +41,7 @@ def ver_estatisticas():
             if paciente["idade"] > mais_velho["idade"]:
                 mais_velho = paciente
 
-        media = soma_idades / total
+        media = calcular_media_idades()
 
         print("Total de pacientes:", total)
         print("Idade média:", media)
